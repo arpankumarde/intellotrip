@@ -39,7 +39,11 @@ const Home = () => {
         if (result?.wb) {
           navigate(`/wb?lat=${result.lat}&lon=${result.lon}`);
         } else {
-          navigate("/out");
+          // convert every key in result to a query string
+          const queryString = Object.keys(result)
+            .map((key) => key + "=" + result[key])
+            .join("&");
+          navigate(`/out?${queryString}`);
         }
       }, 5000);
     }

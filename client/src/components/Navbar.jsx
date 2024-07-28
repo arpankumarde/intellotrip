@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [token, setToken] = useState(localStorage.getItem("token"));
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -11,21 +14,34 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setToken(null);
+    navigate("/");
+  };
+
   return (
     <nav className="bg-white p-4 flex justify-between items-center h-16 drop-shadow-xl">
-      <div className="flex items-center">
+      <Link to="/" className="flex items-center">
         <img
           className="h-12 w-12 mr-2 object-contain"
           src="/logo.png"
           alt="logo"
         />
         <h1 className="text-lg font-bold">Intello Trip</h1>
-      </div>
+      </Link>
       <div className="items-center space-x-4 hidden sm:flex">
-        <button className="">Login</button>
-        <button className="">Signup</button>
-        <button className="">Profile</button>
-        <button className="">Saved Itineraries</button>
+        <Link to="/login" className={token ? "hidden" : null}>
+          Login
+        </Link>
+        <Link to="/signup" className={token ? "hidden" : null}>
+          Signup
+        </Link>
+        <button className={token ? null : "hidden"}>Profile</button>
+        <button className={token ? null : "hidden"}>Saved Itineraries</button>
+        <button className={token ? null : "hidden"} onClick={handleLogout}>
+          Logout
+        </button>
       </div>
       <div className="sm:hidden">
         <button className="" onClick={toggleMenu}>

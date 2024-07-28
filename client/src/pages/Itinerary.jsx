@@ -96,7 +96,8 @@ const Itinerary = () => {
       .post(`/api/itinerary/save`, { itinerary: hotspot?.itinerary })
       .then((res) => {
         console.log(res);
-        let share_url = `http://localhost:3000/plans/${res?.data?.results?.insertId}`;
+        let root = window.location.protocol + "//" + window.location.host;
+        let share_url = `${root}/plans/${res?.data?.results?.insertId}`;
         navigator.clipboard.writeText(share_url);
         // prompt the native dialogue box to share the link
         alert("Link copied to clipboard: " + share_url);
@@ -160,8 +161,8 @@ const Itinerary = () => {
                         <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">
                           {spot?.name}
                         </h3>
-                        <time className="block mb-2 text-sm font-normal leading-none text-gray-400">
-                          Price: {spot?.price} | Time: {spot?.time} hours
+                        <time className="block mb-2 text-sm font-normal leading-none text-gray-600">
+                          Price: {spot?.price} | Time: {spot?.time}
                         </time>
                         <p className="mb-4 text-base font-normal text-gray-500">
                           {spot?.description}

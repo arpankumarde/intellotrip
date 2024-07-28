@@ -1,5 +1,14 @@
 import { Routes, Route } from "react-router-dom";
-import { ChooseHotspot, Home, Itinerary, SItinerary, NotFound } from "./pages";
+import {
+  ChooseHotspot,
+  Home,
+  Itinerary,
+  SItinerary,
+  NotFound,
+  OutWb,
+  Login,
+  Signup,
+} from "./pages";
 
 const Router = () => {
   return (
@@ -8,6 +17,9 @@ const Router = () => {
       <Route path="/plans/:id" element={<SItinerary />} />
       <Route path="/wb" element={<ChooseHotspot />} />
       <Route path="/wb/:id" element={<Itinerary />} />
+      <Route path="/out" element={<OutWb />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

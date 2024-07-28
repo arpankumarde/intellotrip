@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 // import Groq from "groq-sdk";
 import { server } from "../server";
-import { LiaRedoAltSolid } from "react-icons/lia";
-import { IoMdShare } from "react-icons/io";
 
 const SItinerary = () => {
   const { id } = useParams();
@@ -71,8 +69,8 @@ const SItinerary = () => {
                         <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">
                           {spot?.name}
                         </h3>
-                        <time className="block mb-2 text-sm font-normal leading-none text-gray-400">
-                          Price: {spot?.price} | Time: {spot?.time} hours
+                        <time className="block mb-2 text-sm font-normal leading-none text-gray-600">
+                          Price: {spot?.price} | Time: {spot?.time}
                         </time>
                         <p className="mb-4 text-base font-normal text-gray-500">
                           {spot?.description}
