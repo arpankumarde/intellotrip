@@ -19,7 +19,7 @@ const Navbar = () => {
           src="/logo.png"
           alt="logo"
         />
-        <h1 className="text-lg font-bold">Mello Trips</h1>
+        <h1 className="text-lg font-bold">Intello Trip</h1>
       </div>
       <div className="items-center space-x-4 hidden sm:flex">
         <button className="">Login</button>

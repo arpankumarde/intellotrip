@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   return (
-    <>
+    <div className="bg-gradient-to-b from-[#F8F9FD] via-white to-white">
       <div className="relative isolate overflow-hidden bg-gray-900 py-8 sm:py-24 lg:py-12 mx-4 md:mx-8 rounded-2xl shadow-xl">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
@@ -92,7 +92,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <h6 className="font-semibold mb-4">About Mello Trips</h6>
+              <h6 className="font-semibold mb-4">About Intello Trip</h6>
               <ul>
                 <li className="mb-2">
                   <a href="#" className="hover:text-gray-900">
@@ -232,7 +232,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h6 className="font-semibold">Mello Sites</h6>
+              <h6 className="font-semibold">Partner Sites</h6>
               <ul>
                 <li className="mb-2">
                   <a href="#" className="hover:text-gray-900">
@@ -281,7 +281,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left">
               <p className="text-sm">
-                © 2024 Mello Trips LLC All rights reserved.
+                © 2024 Intello Trip LLC All rights reserved.
               </p>
               <ul className="flex flex-wrap justify-center md:justify-start space-x-4 text-sm mt-2">
                 <li>
@@ -343,7 +343,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 
